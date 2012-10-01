@@ -19,3 +19,13 @@ It's pretty simple to use, choose the number of column and attributes the right 
 
 
 # [Demo](http://www.yago-art.ch/agrid/)
+
+## Agrid.css offer you a complete control over the grid with the LESS files !
+
+```@maxWidth``` is the max width of your grid<br />
+```@columnRatio``` is the proportion between column and gutter
+
+With this two parameters, you can make the grid just like you want.
+
+
+## Add some column is easy !
