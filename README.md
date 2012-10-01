@@ -12,7 +12,7 @@ It's pretty simple to use, choose the number of column and attributes the right 
               <div class="span3"></div>
               <div class="span3"></div>
               <div class="span3"></div>
-              <div class="span3"></div>
+              <div class="span3 last"></div>
           </div>
       </div>
 ```
