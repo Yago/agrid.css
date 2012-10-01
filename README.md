@@ -1,4 +1,4 @@
-# Agrid.css is a simple, light and responsive css grid for any devices.
+# Agrid.css is a simple, light and responsive css grid !
 
 It's work just like Twitter Bootstrap, but with less code. 
 
