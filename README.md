@@ -38,4 +38,4 @@ With this two parameters, you can make the grid just like you want.
 
 
 ## Adding some columns is easy !
-For abvanced user, juste change ```@columnNumber``` and add few lines for SPAN WIDTH and OFFSET WIDTH
+For abvanced user, juste change ```@columnNumber``` and add few lines for ```/* SPAN WIDTH */``` and ```/* OFFSET WIDTH */```
