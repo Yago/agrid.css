@@ -29,7 +29,7 @@ It's pretty simple to use, choose the number of column and give them the right c
 ```.span1``` or ```.offset1``` = one column <br />
 ```.last``` is the required class for the last column
 
-## It gives you a complete control over the grid with the LESS files !
+## It gives you a complete control over the grid with the LESS file !
 
 ```@maxWidth``` is the max width of your grid<br />
 ```@columnRatio``` is the proportion between column and gutter
