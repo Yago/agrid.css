@@ -18,4 +18,4 @@ It's pretty simple to use, choose the number of column and attributes the right 
 ```
 
 
-# [DEMO](http://www.yago-art.ch/agrid/)
+# [Demo](http://www.yago-art.ch/agrid/)
