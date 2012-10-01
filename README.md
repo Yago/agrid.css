@@ -2,25 +2,34 @@
 
 It's work just like Twitter Bootstrap, but with less code. 
 
-## 12 columns grid    =>    .span1 or .offset1 = one column
+### [Demo](http://www.yago-art.ch/agrid/)
 
-It's pretty simple to use, choose the number of column and attributes the right class :
+## A 12 columns grid !
+
+It's pretty simple to use, choose the number of column and give them the right class :
 
 ```
-      <div class="container">
-          <div class="row">
-              <div class="span3"></div>
-              <div class="span3"></div>
-              <div class="span3"></div>
-              <div class="span3 last"></div>
-          </div>
-      </div>
+<div class="container">
+    <div class="row">
+        <div class="span3"></div>
+        <div class="span3"></div>
+        <div class="span3"></div>
+        <div class="span3 last"></div>
+    </div>
+    <div class="row">
+        <div class="span3"></div>
+        <div class="span2 offset4"></div>
+        <div class="span3 last"></div>
+    </div>
+</div>
 ```
 
+```.container``` is the block who content all your rows<br />
+```.row``` is just like his name, he contains the column of your layout<br />
+```.span1``` or ```.offset1``` = one column <br />
+```.last``` is the required class for the last column
 
-# [Demo](http://www.yago-art.ch/agrid/)
-
-## Agrid.css offer you a complete control over the grid with the LESS files !
+## It gives you a complete control over the grid with the LESS files !
 
 ```@maxWidth``` is the max width of your grid<br />
 ```@columnRatio``` is the proportion between column and gutter
@@ -28,4 +37,5 @@ It's pretty simple to use, choose the number of column and attributes the right 
 With this two parameters, you can make the grid just like you want.
 
 
-## Add some column is easy !
+## Adding some columns is easy !
+For abvanced user, juste change ```@columnNumber``` and add few lines for SPAN WIDTH and OFFSET WIDTH
