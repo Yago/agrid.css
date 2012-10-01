@@ -1,0 +1,87 @@
+/*
+ * AGRID.CSS - 1140px responsive grid
+ *
+ * Copyright (c) 2012 Yann Gouffon, Antistatique.net Sàrl
+ * Inspirate by 1140-Grid & Twitter Bootstrap
+ *
+ */
+
+
+@maxWidth :               1140px;
+@limit :                  767px;
+@ieLimit :                950px;
+
+
+/* Define the number of column (if more than 12 : add line for SPAN WIDTH and OFFSET WIDTH) */
+@columnNumber :          12;
+@gutterNumber :          @columnNumber - 1;
+
+
+/* Define the ratio between column and gutter */
+@columnRatio :            1.61803399;
+
+
+/* ie optimisation (works perfeclty after 950px width) / DON'T CHANGE VALUE ! */
+@ieCoef :                 .5;
+@ieOptimisation :         (@ieCoef/@maxWidth*100%);
+
+
+/* Calculates widths */
+@spanWidth :              (100*@columnRatio)/((@columnNumber*@columnRatio)+@gutterNumber);
+@gutterWidth :            @spanWidth/@columnRatio;
+
+
+/*
+** INIT
+********************************************************************************/
+
+.container {max-width: @maxWidth; margin: 0 auto;}
+.row {width: 100%;min-width: @limit;overflow: hidden; clear:both; margin: (@gutterWidth*1%) 0;}
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11 {margin:0;margin-right: @gutterWidth * 1%; *margin-right: (@gutterWidth * 1%)-@ieOptimisation;float: left;}
+.row .last {margin-right: 0;}
+
+/*
+** SPAN WIDTH
+********************************************************************************/
+
+.row .span1 {width: (@spanWidth * 1%); *width: (@spanWidth * 1%)-@ieOptimisation;}
+.row .span2 {width: (@spanWidth * 2%) + (@gutterWidth * 1%); *width: ((@spanWidth * 2%) + (@gutterWidth * 1%))-@ieOptimisation;}
+.row .span3 {width: (@spanWidth * 3%) + (@gutterWidth * 2%); *width: ((@spanWidth * 3%) + (@gutterWidth * 2%))-@ieOptimisation;}
+.row .span4 {width: (@spanWidth * 4%) + (@gutterWidth * 3%); *width: ((@spanWidth * 4%) + (@gutterWidth * 3%))-@ieOptimisation;}
+.row .span5 {width: (@spanWidth * 5%) + (@gutterWidth * 4%); *width: ((@spanWidth * 5%) + (@gutterWidth * 4%))-@ieOptimisation;}
+.row .span6 {width: (@spanWidth * 6%) + (@gutterWidth * 5%); *width: ((@spanWidth * 6%) + (@gutterWidth * 5%))-@ieOptimisation;}
+.row .span7 {width: (@spanWidth * 7%) + (@gutterWidth * 6%); *width: ((@spanWidth * 7%) + (@gutterWidth * 6%))-@ieOptimisation;}
+.row .span8 {width: (@spanWidth * 8%) + (@gutterWidth * 7%); *width: ((@spanWidth * 8%) + (@gutterWidth * 7%))-@ieOptimisation;}
+.row .span9 {width: (@spanWidth * 9%) + (@gutterWidth * 8%); *width: ((@spanWidth * 9%) + (@gutterWidth * 8%))-@ieOptimisation;}
+.row .span10 {width: (@spanWidth * 10%) + (@gutterWidth * 9%); *width: ((@spanWidth * 10%) + (@gutterWidth * 9%))-@ieOptimisation;}
+.row .span11 {width: (@spanWidth * 11%) + (@gutterWidth * 10%); *width: ((@spanWidth * 11%) + (@gutterWidth * 10%))-@ieOptimisation;}
+
+/*
+** OFFSET WIDTH
+********************************************************************************/
+
+.row .offset1 {margin-left: (@spanWidth * 1%) + (@gutterWidth * 1%); *margin-left: ((@spanWidth * 1%) + (@gutterWidth * 1%))-@ieOptimisation;}
+.row .offset2 {margin-left: (@spanWidth * 2%) + (@gutterWidth * 2%); *margin-left: ((@spanWidth * 2%) + (@gutterWidth * 2%))-@ieOptimisation;}
+.row .offset3 {margin-left: (@spanWidth * 3%) + (@gutterWidth * 3%); *margin-left: ((@spanWidth * 3%) + (@gutterWidth * 3%))-@ieOptimisation;}
+.row .offset4 {margin-left: (@spanWidth * 4%) + (@gutterWidth * 4%); *margin-left: ((@spanWidth * 4%) + (@gutterWidth * 4%))-@ieOptimisation;}
+.row .offset5 {margin-left: (@spanWidth * 5%) + (@gutterWidth * 5%); *margin-left: ((@spanWidth * 5%) + (@gutterWidth * 5%))-@ieOptimisation;}
+.row .offset6 {margin-left: (@spanWidth * 6%) + (@gutterWidth * 6%); *margin-left: ((@spanWidth * 6%) + (@gutterWidth * 6%))-@ieOptimisation;}
+.row .offset7 {margin-left: (@spanWidth * 7%) + (@gutterWidth * 7%); *margin-left: ((@spanWidth * 7%) + (@gutterWidth * 7%))-@ieOptimisation;}
+.row .offset8 {margin-left: (@spanWidth * 8%) + (@gutterWidth * 8%); *margin-left: ((@spanWidth * 8%) + (@gutterWidth * 8%))-@ieOptimisation;}
+.row .offset9 {margin-left: (@spanWidth * 9%) + (@gutterWidth * 9%); *margin-left: ((@spanWidth * 9%) + (@gutterWidth * 9%))-@ieOptimisation;}
+.row .offset10 {margin-left: (@spanWidth * 10%) + (@gutterWidth * 10%); *margin-left: ((@spanWidth * 10%) + (@gutterWidth * 10%))-@ieOptimisation;}
+
+/*
+** MOBILE
+********************************************************************************/
+
+@media handheld, only screen and (max-width: @limit) {
+  .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
+  .row .span1, .row .span2, .row .span3, .row .span4, .row .span5, .row .span6, .row .span7, .row span8, .row .span9, .row .span10, .row .span11 {width: auto; float: none; margin-left: 0px; margin-right: 0px; padding-left: 20px; padding-right: 20px;margin-bottom: 22px;}
+}
+
+@media screen and (max-width: @ieLimit) {
+  .lt-ie9 .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
+  .lt-ie9 .row .span1, .lt-ie9 .row .span2, .lt-ie9 .row .span3, .lt-ie9 .row .span4, .lt-ie9 .row .span5, .lt-ie9 .row .span6, .lt-ie9 .row .span7, .lt-ie9 .row span8, .lt-ie9 .row .span9, .lt-ie9 .row .span10, .lt-ie9 .row .span11 {width: auto; float: none; margin-left: 0px; margin-right: 0px; padding-left: 20px; padding-right: 20px;margin-bottom: 22px;}
+}
+

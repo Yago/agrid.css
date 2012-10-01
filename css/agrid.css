@@ -1,0 +1,195 @@
+/*
+ * AGRID.CSS - 1140px responsive grid
+ *
+ * Copyright (c) 2012 Yann Gouffon, Antistatique.net Sàrl
+ * Inspirate by 1140-Grid & Twitter Bootstrap
+ *
+ */
+/* Define the number of column (if more than 12 : add line for SPAN WIDTH and OFFSET WIDTH) */
+/* Define the ratio between column and gutter */
+/* ie optimisation (works perfeclty after 950px width) / DON'T CHANGE VALUE ! */
+/* Calculates widths */
+/*
+** INIT
+********************************************************************************/
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.row {
+  width: 100%;
+  min-width: 767px;
+  overflow: hidden;
+  clear: both;
+  margin: 3.287699204801695% 0;
+}
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11 {
+  margin: 0;
+  margin-right: 3.287699204801695%;
+  *margin-right: 3.243839555678888%;
+  float: left;
+}
+.row .last {
+  margin-right: 0;
+}
+/*
+** SPAN WIDTH
+********************************************************************************/
+.row .span1 {
+  width: 5.319609062265114%;
+  *width: 5.275749413142306%;
+}
+.row .span2 {
+  width: 13.926917329331923%;
+  *width: 13.883057680209117%;
+}
+.row .span3 {
+  width: 22.53422559639873%;
+  *width: 22.490365947275922%;
+}
+.row .span4 {
+  width: 31.14153386346554%;
+  *width: 31.09767421434273%;
+}
+.row .span5 {
+  width: 39.74884213053235%;
+  *width: 39.704982481409544%;
+}
+.row .span6 {
+  width: 48.35615039759916%;
+  *width: 48.31229074847635%;
+}
+.row .span7 {
+  width: 56.963458664665964%;
+  *width: 56.919599015543156%;
+}
+.row .span8 {
+  width: 65.57076693173278%;
+  *width: 65.52690728260997%;
+}
+.row .span9 {
+  width: 74.17807519879959%;
+  *width: 74.13421554967678%;
+}
+.row .span10 {
+  width: 82.7853834658664%;
+  *width: 82.7415238167436%;
+}
+.row .span11 {
+  width: 91.3926917329332%;
+  *width: 91.3488320838104%;
+}
+/*
+** OFFSET WIDTH
+********************************************************************************/
+.row .offset1 {
+  margin-left: 8.60730826706681%;
+  *margin-left: 8.563448617944003%;
+}
+.row .offset2 {
+  margin-left: 17.21461653413362%;
+  *margin-left: 17.17075688501081%;
+}
+.row .offset3 {
+  margin-left: 25.821924801200424%;
+  *margin-left: 25.778065152077616%;
+}
+.row .offset4 {
+  margin-left: 34.42923306826724%;
+  *margin-left: 34.38537341914443%;
+}
+.row .offset5 {
+  margin-left: 43.03654133533405%;
+  *margin-left: 42.99268168621124%;
+}
+.row .offset6 {
+  margin-left: 51.64384960240085%;
+  *margin-left: 51.59998995327804%;
+}
+.row .offset7 {
+  margin-left: 60.25115786946766%;
+  *margin-left: 60.20729822034485%;
+}
+.row .offset8 {
+  margin-left: 68.85846613653447%;
+  *margin-left: 68.81460648741167%;
+}
+.row .offset9 {
+  margin-left: 77.46577440360127%;
+  *margin-left: 77.42191475447846%;
+}
+.row .offset10 {
+  margin-left: 86.0730826706681%;
+  *margin-left: 86.02922302154529%;
+}
+/*
+** MOBILE
+********************************************************************************/
+@media handheld, only screen and (max-width: 767px) {
+  .row {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .row .span1,
+  .row .span2,
+  .row .span3,
+  .row .span4,
+  .row .span5,
+  .row .span6,
+  .row .span7,
+  .row span8,
+  .row .span9,
+  .row .span10,
+  .row .span11 {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .lt-ie9 .row {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .lt-ie9 .row .span1,
+  .lt-ie9 .row .span2,
+  .lt-ie9 .row .span3,
+  .lt-ie9 .row .span4,
+  .lt-ie9 .row .span5,
+  .lt-ie9 .row .span6,
+  .lt-ie9 .row .span7,
+  .lt-ie9 .row span8,
+  .lt-ie9 .row .span9,
+  .lt-ie9 .row .span10,
+  .lt-ie9 .row .span11 {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 22px;
+  }
+}
