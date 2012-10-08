@@ -35,7 +35,7 @@
 ** INIT
 ********************************************************************************/
 
-.container {max-width: @maxWidth; margin: 0 auto;}
+.container {max-width: @maxWidth; margin: 0 auto; padding: 0 10px;}
 .row {width: 100%;overflow: hidden; clear:both; margin: (@gutterWidth*1%) 0; position: relative;}
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11 {margin:0;margin-right: @gutterWidth * 1%; *margin-right: (@gutterWidth * 1%)-@ieOptimisation;float: left;}
 .span1 .row, .span2 .row, .span3 .row, .span4 .row, .span5 .row, .span6 .row, .span7 .row, .span8 .row, .span9 .row, .span10 .row, .span11 .row {margin:0;}
@@ -78,13 +78,13 @@
 
 @media handheld, only screen and (max-width: @limit) {
   .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .row .span1, .row .span2, .row .span3, .row .span4, .row .span5, .row .span6, .row .span7, .row .span8, .row .span9, .row .span10, .row .span11 {width: auto; float: none; margin-left: 0px; margin-right: 0px; padding-left: 20px; padding-right: 20px;margin-bottom: 22px;}
+  .row .span1, .row .span2, .row .span3, .row .span4, .row .span5, .row .span6, .row .span7, .row .span8, .row .span9, .row .span10, .row .span11 {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
   .row .offset1, .row .offset2, .row .offset3, .row .offset4, .row .offset5, .row .offset6, .row .offset7, .row .offset8, .row .offset9, .row .offset10 {margin-left: 0;}
 }
 
 @media screen and (max-width: @ieLimit) {
   .lt-ie9 .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .lt-ie9 .row .span1, .lt-ie9 .row .span2, .lt-ie9 .row .span3, .lt-ie9 .row .span4, .lt-ie9 .row .span5, .lt-ie9 .row .span6, .lt-ie9 .row .span7, .lt-ie9 .row span8, .lt-ie9 .row .span9, .lt-ie9 .row .span10, .lt-ie9 .row .span11 {width: auto; float: none; margin-left: 0px; margin-right: 0px; padding-left: 20px; padding-right: 20px;margin-bottom: 22px;}
+  .lt-ie9 .row .span1, .lt-ie9 .row .span2, .lt-ie9 .row .span3, .lt-ie9 .row .span4, .lt-ie9 .row .span5, .lt-ie9 .row .span6, .lt-ie9 .row .span7, .lt-ie9 .row span8, .lt-ie9 .row .span9, .lt-ie9 .row .span10, .lt-ie9 .row .span11 {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
   .lt-ie9 .row .offset1, .lt-ie9 .row .offset2, .lt-ie9 .row .offset3, .lt-ie9 .row .offset4, .lt-ie9 .row .offset5, .lt-ie9 .row .offset6, .lt-ie9 .row .offset7, .lt-ie9 .row .offset8, .lt-ie9 .row .offset9, .lt-ie9 .row .offset10 {margin-left: 0;}
 }
 
