@@ -1,10 +1,10 @@
 # Agrid.css is a simple, light and responsive css grid !
 
-It's work just like Twitter Bootstrap, but with less code. 
+It's work just like Twitter Bootstrap, but more configurable. 
 
 ### [Demo](http://www.yago-art.ch/agrid/)
 
-## A 12 columns grid !
+## A very easy grid !
 
 It's pretty simple to use, choose the number of column and give them the right class :
 
@@ -31,11 +31,8 @@ It's pretty simple to use, choose the number of column and give them the right c
 
 ## It gives you a complete control over the grid with the LESS file !
 
-```@maxWidth``` is the max width of your grid<br />
-```@columnRatio``` is the proportion between column and gutter
+With ```@columnNumber``` you can choose how much columns your Grid had !<br />
+You can choose the max-width of your grid with ```@maxWidth```<br />
+And ```@columnRatio``` define the proportion between column and gutter !
 
-With this two parameters, you can make the grid just like you want.
-
-
-## Adding some columns is easy !
-For abvanced user, juste change ```@columnNumber``` and add few lines for ```/* SPAN WIDTH */``` and ```/* OFFSET WIDTH */```
+This fiews parameters can completly change the look of your Grid. The LESS file is very easy to use, so don't be afraid and choose how is your Grid !
