@@ -9,33 +9,49 @@
  */
 
 
-@maxWidth :               1140px;
-@limit :                  767px;
-@ieLimit :                950px;
+
+// CONTROL PANEL
+//================================================================================
+
+  // Define the number of columns
+  @columnNumber :          12;
+
+  // Define the smallest .span
+  @startFrom :             1;
+
+  // Define the ratio between column and gutter
+  @columnRatio :            1.61803399;
+
+  // Define the max-width of your Grid
+  @maxWidth :               1140px;
+
+  // Define the Media Queries steps
+  @limit :                  767px;
+  @ieLimit :                950px;
+
+//================================================================================
 
 
-/* Define the number of column (if more than 12 : add line for SPAN WIDTH and OFFSET WIDTH) */
-@columnNumber :          12;
+//--------------------------------------------------------------------------------
+// CALCULATOR  !! DON'T TOUCH !!
+//--------------------------------------------------------------------------------
+
+@columns :               (@columnNumber + 1);
 @gutterNumber :          @columnNumber - 1;
 
-
-/* Define the ratio between column and gutter */
-@columnRatio :            1.61803399;
-
-
-/* ie optimisation (works perfeclty after 950px width) / DON'T CHANGE VALUE ! */
+// ie optimisation (works perfeclty after 950px width)
 @ieCoef :                 .5;
 @ieOptimisation :         (@ieCoef/@maxWidth*100%);
 
-
-/* Calculates widths */
+// Calculates widths
 @spanWidth :              (100*@columnRatio)/((@columnNumber*@columnRatio)+@gutterNumber);
 @gutterWidth :            @spanWidth/@columnRatio;
 
 
-/*
-** INIT
-********************************************************************************/
+
+//--------------------------------------------------------------------------------
+// INIT
+//--------------------------------------------------------------------------------
 
 .container {max-width: @maxWidth; margin: 0 auto; padding: 0 10px;}
 .row {width: 100%;overflow: hidden; clear:both; margin: (@gutterWidth*1%) 0; position: relative;}
@@ -44,55 +60,41 @@
 .row .last {margin-right: 0;}
 
 
-/*
-** MIXINS
-********************************************************************************/
+//--------------------------------------------------------------------------------
+// MIXINS
+//--------------------------------------------------------------------------------
 
-.spanMaker(@spanNumber) {
-  width: ((@spanWidth * @spanNumber) + (@gutterWidth * (@spanNumber - 1))) * 1%;
-  *width: ((@spanWidth * @spanNumber) + (@gutterWidth * (@spanNumber - 1))) * 1% - @ieOptimisation;
+.spanGenerator (@startFrom) when (@startFrom < @columns) {
+  (~".span@{startFrom}"){.spanCalculator(@startFrom);}
+  .spanGenerator(@startFrom + 1);
+}
+.spanGenerator (@columns) {}
+
+.spanCalculator(@startFrom) {
+  width: ((@spanWidth * @startFrom) + (@gutterWidth * (@startFrom - 1))) * 1%;
+  *width: ((@spanWidth * @startFrom) + (@gutterWidth * (@startFrom - 1))) * 1% - @ieOptimisation;
 }
 
-.offsetMaker(@offsetNumber) {
+.spanGenerator (@startFrom);
+
+
+.offsetGenerator (@startFrom) when (@startFrom < @columnNumber) {
+  (~".offset@{startFrom}"){.offsetCalculator(@startFrom);}
+  .offsetGenerator(@startFrom + 1);
+}
+.offsetGenerator (@columnNumber) {}
+
+.offsetCalculator(@offsetNumber) {
   margin-left: ((@spanWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1%; 
   *margin-left: ((@spanWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1% - @ieOptimisation;
 }
 
+.offsetGenerator (@startFrom);
 
-/*
-** SPAN WIDTH
-********************************************************************************/
 
-.row .span1 {.spanMaker(1);}
-.row .span2 {.spanMaker(2);}
-.row .span3 {.spanMaker(3);}
-.row .span4 {.spanMaker(4);}
-.row .span5 {.spanMaker(5);}
-.row .span6 {.spanMaker(6);}
-.row .span7 {.spanMaker(7);}
-.row .span8 {.spanMaker(8);}
-.row .span9 {.spanMaker(9);}
-.row .span10 {.spanMaker(10);}
-.row .span11 {.spanMaker(11);}
-
-/*
-** OFFSET WIDTH
-********************************************************************************/
-
-.row .offset1 {.offsetMaker(1);}
-.row .offset2 {.offsetMaker(2);}
-.row .offset3 {.offsetMaker(3);}
-.row .offset4 {.offsetMaker(4);}
-.row .offset5 {.offsetMaker(5);}
-.row .offset6 {.offsetMaker(6);}
-.row .offset7 {.offsetMaker(7);}
-.row .offset8 {.offsetMaker(8);}
-.row .offset9 {.offsetMaker(9);}
-.row .offset10 {.offsetMaker(10);}
-
-/*
-** MOBILE
-********************************************************************************/
+//---------------------------------------------------------------------------------
+// MEDIA QUERIES
+//---------------------------------------------------------------------------------
 
 @media handheld, only screen and (max-width: @limit) {
   .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
@@ -102,7 +104,6 @@
 
 @media screen and (max-width: @ieLimit) {
   .lt-ie9 .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .lt-ie9 .row .span1, .lt-ie9 .row .span2, .lt-ie9 .row .span3, .lt-ie9 .row .span4, .lt-ie9 .row .span5, .lt-ie9 .row .span6, .lt-ie9 .row .span7, .lt-ie9 .row span8, .lt-ie9 .row .span9, .lt-ie9 .row .span10, .lt-ie9 .row .span11 {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
-  .lt-ie9 .row .offset1, .lt-ie9 .row .offset2, .lt-ie9 .row .offset3, .lt-ie9 .row .offset4, .lt-ie9 .row .offset5, .lt-ie9 .row .offset6, .lt-ie9 .row .offset7, .lt-ie9 .row .offset8, .lt-ie9 .row .offset9, .lt-ie9 .row .offset10 {margin-left: 0;}
+  .lt-ie9 .row [class*="span"] {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
+  .lt-ie9 .row [class*="offset"] {margin-left: 0;}
 }
-
