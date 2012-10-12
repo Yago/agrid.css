@@ -4,6 +4,8 @@
  * Copyright (c) 2012 Yann Gouffon, Antistatique.net Sàrl
  * Inspirate by 1140-Grid & Twitter Bootstrap
  *
+ * LICENSE MIT
+ *
  */
 /* Define the number of column (if more than 12 : add line for SPAN WIDTH and OFFSET WIDTH) */
 /* Define the ratio between column and gutter */
@@ -24,38 +26,21 @@
   margin: 3.287699204801695% 0;
   position: relative;
 }
-.span1,
-.span2,
-.span3,
-.span4,
-.span5,
-.span6,
-.span7,
-.span8,
-.span9,
-.span10,
-.span11 {
+[class*="span"] {
   margin: 0;
   margin-right: 3.287699204801695%;
   *margin-right: 3.243839555678888%;
   float: left;
 }
-.span1 .row,
-.span2 .row,
-.span3 .row,
-.span4 .row,
-.span5 .row,
-.span6 .row,
-.span7 .row,
-.span8 .row,
-.span9 .row,
-.span10 .row,
-.span11 .row {
+[class*="span"] .row {
   margin: 0;
 }
 .row .last {
   margin-right: 0;
 }
+/*
+** MIXINS
+********************************************************************************/
 /*
 ** SPAN WIDTH
 ********************************************************************************/
@@ -158,31 +143,12 @@
     padding-left: 0px;
     padding-right: 0px;
   }
-  .row .span1,
-  .row .span2,
-  .row .span3,
-  .row .span4,
-  .row .span5,
-  .row .span6,
-  .row .span7,
-  .row .span8,
-  .row .span9,
-  .row .span10,
-  .row .span11 {
+  .row [class*="span"] {
     width: auto;
     float: none;
     margin: 3.287699204801695% 0;
   }
-  .row .offset1,
-  .row .offset2,
-  .row .offset3,
-  .row .offset4,
-  .row .offset5,
-  .row .offset6,
-  .row .offset7,
-  .row .offset8,
-  .row .offset9,
-  .row .offset10 {
+  .row [class*="offset"] {
     margin-left: 0;
   }
 }

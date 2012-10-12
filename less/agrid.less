@@ -4,6 +4,8 @@
  * Copyright (c) 2012 Yann Gouffon, Antistatique.net Sàrl
  * Inspirate by 1140-Grid & Twitter Bootstrap
  *
+ * LICENSE MIT
+ *
  */
 
 
@@ -37,40 +39,56 @@
 
 .container {max-width: @maxWidth; margin: 0 auto; padding: 0 10px;}
 .row {width: 100%;overflow: hidden; clear:both; margin: (@gutterWidth*1%) 0; position: relative;}
-.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11 {margin:0;margin-right: @gutterWidth * 1%; *margin-right: (@gutterWidth * 1%)-@ieOptimisation;float: left;}
-.span1 .row, .span2 .row, .span3 .row, .span4 .row, .span5 .row, .span6 .row, .span7 .row, .span8 .row, .span9 .row, .span10 .row, .span11 .row {margin:0;}
+[class*="span"] {margin:0;margin-right: @gutterWidth * 1%; *margin-right: (@gutterWidth * 1%)-@ieOptimisation;float: left;}
+[class*="span"] .row {margin:0;}
 .row .last {margin-right: 0;}
+
+
+/*
+** MIXINS
+********************************************************************************/
+
+.spanMaker(@spanNumber) {
+  width: ((@spanWidth * @spanNumber) + (@gutterWidth * (@spanNumber - 1))) * 1%;
+  *width: ((@spanWidth * @spanNumber) + (@gutterWidth * (@spanNumber - 1))) * 1% - @ieOptimisation;
+}
+
+.offsetMaker(@offsetNumber) {
+  margin-left: ((@spanWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1%; 
+  *margin-left: ((@spanWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1% - @ieOptimisation;
+}
+
 
 /*
 ** SPAN WIDTH
 ********************************************************************************/
 
-.row .span1 {width: (@spanWidth * 1%); *width: (@spanWidth * 1%)-@ieOptimisation;}
-.row .span2 {width: (@spanWidth * 2%) + (@gutterWidth * 1%); *width: ((@spanWidth * 2%) + (@gutterWidth * 1%))-@ieOptimisation;}
-.row .span3 {width: (@spanWidth * 3%) + (@gutterWidth * 2%); *width: ((@spanWidth * 3%) + (@gutterWidth * 2%))-@ieOptimisation;}
-.row .span4 {width: (@spanWidth * 4%) + (@gutterWidth * 3%); *width: ((@spanWidth * 4%) + (@gutterWidth * 3%))-@ieOptimisation;}
-.row .span5 {width: (@spanWidth * 5%) + (@gutterWidth * 4%); *width: ((@spanWidth * 5%) + (@gutterWidth * 4%))-@ieOptimisation;}
-.row .span6 {width: (@spanWidth * 6%) + (@gutterWidth * 5%); *width: ((@spanWidth * 6%) + (@gutterWidth * 5%))-@ieOptimisation;}
-.row .span7 {width: (@spanWidth * 7%) + (@gutterWidth * 6%); *width: ((@spanWidth * 7%) + (@gutterWidth * 6%))-@ieOptimisation;}
-.row .span8 {width: (@spanWidth * 8%) + (@gutterWidth * 7%); *width: ((@spanWidth * 8%) + (@gutterWidth * 7%))-@ieOptimisation;}
-.row .span9 {width: (@spanWidth * 9%) + (@gutterWidth * 8%); *width: ((@spanWidth * 9%) + (@gutterWidth * 8%))-@ieOptimisation;}
-.row .span10 {width: (@spanWidth * 10%) + (@gutterWidth * 9%); *width: ((@spanWidth * 10%) + (@gutterWidth * 9%))-@ieOptimisation;}
-.row .span11 {width: (@spanWidth * 11%) + (@gutterWidth * 10%); *width: ((@spanWidth * 11%) + (@gutterWidth * 10%))-@ieOptimisation;}
+.row .span1 {.spanMaker(1);}
+.row .span2 {.spanMaker(2);}
+.row .span3 {.spanMaker(3);}
+.row .span4 {.spanMaker(4);}
+.row .span5 {.spanMaker(5);}
+.row .span6 {.spanMaker(6);}
+.row .span7 {.spanMaker(7);}
+.row .span8 {.spanMaker(8);}
+.row .span9 {.spanMaker(9);}
+.row .span10 {.spanMaker(10);}
+.row .span11 {.spanMaker(11);}
 
 /*
 ** OFFSET WIDTH
 ********************************************************************************/
 
-.row .offset1 {margin-left: (@spanWidth * 1%) + (@gutterWidth * 1%); *margin-left: ((@spanWidth * 1%) + (@gutterWidth * 1%))-@ieOptimisation;}
-.row .offset2 {margin-left: (@spanWidth * 2%) + (@gutterWidth * 2%); *margin-left: ((@spanWidth * 2%) + (@gutterWidth * 2%))-@ieOptimisation;}
-.row .offset3 {margin-left: (@spanWidth * 3%) + (@gutterWidth * 3%); *margin-left: ((@spanWidth * 3%) + (@gutterWidth * 3%))-@ieOptimisation;}
-.row .offset4 {margin-left: (@spanWidth * 4%) + (@gutterWidth * 4%); *margin-left: ((@spanWidth * 4%) + (@gutterWidth * 4%))-@ieOptimisation;}
-.row .offset5 {margin-left: (@spanWidth * 5%) + (@gutterWidth * 5%); *margin-left: ((@spanWidth * 5%) + (@gutterWidth * 5%))-@ieOptimisation;}
-.row .offset6 {margin-left: (@spanWidth * 6%) + (@gutterWidth * 6%); *margin-left: ((@spanWidth * 6%) + (@gutterWidth * 6%))-@ieOptimisation;}
-.row .offset7 {margin-left: (@spanWidth * 7%) + (@gutterWidth * 7%); *margin-left: ((@spanWidth * 7%) + (@gutterWidth * 7%))-@ieOptimisation;}
-.row .offset8 {margin-left: (@spanWidth * 8%) + (@gutterWidth * 8%); *margin-left: ((@spanWidth * 8%) + (@gutterWidth * 8%))-@ieOptimisation;}
-.row .offset9 {margin-left: (@spanWidth * 9%) + (@gutterWidth * 9%); *margin-left: ((@spanWidth * 9%) + (@gutterWidth * 9%))-@ieOptimisation;}
-.row .offset10 {margin-left: (@spanWidth * 10%) + (@gutterWidth * 10%); *margin-left: ((@spanWidth * 10%) + (@gutterWidth * 10%))-@ieOptimisation;}
+.row .offset1 {.offsetMaker(1);}
+.row .offset2 {.offsetMaker(2);}
+.row .offset3 {.offsetMaker(3);}
+.row .offset4 {.offsetMaker(4);}
+.row .offset5 {.offsetMaker(5);}
+.row .offset6 {.offsetMaker(6);}
+.row .offset7 {.offsetMaker(7);}
+.row .offset8 {.offsetMaker(8);}
+.row .offset9 {.offsetMaker(9);}
+.row .offset10 {.offsetMaker(10);}
 
 /*
 ** MOBILE
@@ -78,8 +96,8 @@
 
 @media handheld, only screen and (max-width: @limit) {
   .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .row .span1, .row .span2, .row .span3, .row .span4, .row .span5, .row .span6, .row .span7, .row .span8, .row .span9, .row .span10, .row .span11 {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
-  .row .offset1, .row .offset2, .row .offset3, .row .offset4, .row .offset5, .row .offset6, .row .offset7, .row .offset8, .row .offset9, .row .offset10 {margin-left: 0;}
+  .row [class*="span"] {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
+  .row [class*="offset"] {margin-left: 0;}
 }
 
 @media screen and (max-width: @ieLimit) {
