@@ -2,7 +2,7 @@
 
 It's work just like Twitter Bootstrap, but more configurable. 
 
-### [Demo](http://www.yago-art.ch/agrid/)
+### [Demo](http://yago31.github.com/agrid.css/)
 
 ## A very easy grid !
 
