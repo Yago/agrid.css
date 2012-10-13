@@ -31,6 +31,13 @@
 .row .last {
   margin-right: 0;
 }
+[class*="span"] img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
 .span1 {
   width: 5.319609062265114%;
   *width: 5.275749413142306%;

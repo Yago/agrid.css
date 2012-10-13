@@ -7,29 +7,29 @@
   <!-- Install the awesome Agrid.css -->
   <link rel="stylesheet" href="css/agrid.css">
   <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+  <script src="http://use.edgefonts.net/bebas-neue.js"></script>
+  <script src="http://use.edgefonts.net/lato.js"></script>
 
   <style type='text/css'>
     body{
+      margin: 0;
       font-family: sans-serif;
-      padding: 0 20px;
       background-color: #f0f0f0;
+      color: #2e2e2e;
+      line-height: 25px;
     }
+    h1, h2, h3, h4 {font-family: bebas-neue, sans-serif; font-weight: 100; line-height: 1.2em; margin: 0;}
     h1 {
-      font-size: 45px;
       text-shadow: 0px 1px 0px #FFF;
       margin: 0;
       margin-top: 60px;
+      font-size: 70px;
     }
+    h2 {font-size: 40px;}
+    p {font-family: lato, sans-serif; font-weight: 500;}
     small {
       display: block;
       margin: 20px 0 40px 10px;
-    }
-    p {
-      background-color: #666;
-      border-radius: 3px;
-      text-align: center;
-      color: white;
-      padding: 10px 0;
     }
     address, a{
       font-size: 11px;
@@ -40,16 +40,96 @@
     }
     a{font-weight: bold;}
     a:hover {color: #D40B6B;}
+    span {color: #ffc600;}
     .yago:hover {color: #4183C4;}
+    .highlight {background-color: #2e2e2e; min-height: 10px;}
+    .highlight [class*="span"] {min-height: 10px; background-color: #ffc600;}
+    pre {color: #000;}
+    .dial {font-size: 30px; padding-top: 30px;text-align: center;}
+    ul {padding: 0;}
+    li {list-style-type: none; font-weight: 800;}
+    .demo {background-color: #2e2e2e;}
+    .demo h2 {position: relative; top: -35px;}
+    .demo [class*="span"] {min-height: 40px; line-height: 40px;background-color: ffc600; text-align: center;}
+    @media handheld, only screen and (max-width: 767px) {.highlight [class*="span"]{display: none;}}
   </style>
 </head>
 <body>
   <div class="container">
+    <h1><span>A</span>grid.css</h1>
+  </div>
+  <div class="highlight">
+    <div class="container">
+      <div class="row">
+        <div class="span2"></div>
+        <div class="span2"></div>
+        <div class="span2"></div>
+        <div class="span2"></div>
+        <div class="span2"></div>
+        <div class="span2 last"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
-      <h1>This is an exemple of Agrid !</h1>
-      <small>by Yago</small>
+      <div class="span6">
+        <h2>The grid you always looking for&nbsp;!</h2>
+        <p>
+          Realy easy to use, Agrid.css is a simple, light and fluid grid systeme. It use the same HTML class than Twitter Bootstrap, but without all the other stuff. So now, if you just want to use a grid, it seems to be the right choice.
+        </p>
+        <p>
+          You don't need to be an hardcoder to use this awesome grid, just remember the structure :
+        </p>
+        <pre><code>
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="span4"&gt;&lt;/div&gt;
+            &lt;div class="span4"&gt;&lt;/div&gt;
+            &lt;div class="span4 last"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+        </code></pre>
+      </div>
+      <div class="span6 last">
+        <p class="dial">Thats my daddy&nbsp;!<br /><span>▽</span></p>
+        <img src="http://fc03.deviantart.net/fs70/i/2011/248/0/5/blue_baby_dragon_by_benu_h-d48xudy.png" alt="Ble Baby Dragon by benu-h/Deviantart" title="by benu-h on Deviantart" />
+      </div>
     </div>
     <div class="row">
+      <div class="span4">
+        <h2>Control the columns&nbsp;!</h2>
+        <p>
+          The less file gives you a complete control over the grid. You can choose how many columns you want. Just define :
+        </p>
+        <ul>
+          <li>@columnNumber</li>
+        </ul>
+      </div>
+      <div class="span4">
+        <h2>Control the gutter&nbsp;!</h2>
+        <p>
+          You can also choose the proportions between column and gutter. It make the perfect grid for your project. Define :
+        </p>
+        <ul>
+          <li>@columnRatio</li>
+        </ul>
+      </div>
+      <div class="span4 last">
+        <h2>Control the width&nbsp;!</h2>
+        <p>
+          You are not any more restrained by width choosing for you. You choose the width, the third important parameter :
+        </p>
+        <ul>
+          <li>@maxWidth</li>
+        </ul>
+      </div>
+    </div>
+    <br /><br />
+  </div>
+  <div class="demo">
+    <div class="container">
+      <h2>Just look how it's work</h2>
+      <div class="row">
       <p class="span1">.span1</p>
       <p class="span1">.span1</p>
       <p class="span1">.span1</p>
@@ -127,12 +207,16 @@
     <div class="row">
       <p class="span10 offset2 last">.span10 .offset2</p>
     </div>
+    <br />
+    </div>
+  </div>
+  <div class="container">
     <br style="line-height:40px;" />
-    <address>Develloped by <a class="yago" href="https://github.com/Yago31">Yann Gouffon</a>, <a href="http://www.antistatique.net">Antistatique Sàrl</a></address>
+    <address>Develloped by <a class="yago" href="https://github.com/Yago31">Yago</a>, <a href="http://www.antistatique.net">Antistatique Sàrl</a></address>
     <br style="line-height:80px;" />
   </div>
   <a target="_blank" href="https://github.com/yago31/agrid.css">
-  <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" style="position: absolute; top: 0; right: 0; border: 0;">
+  <img alt="Fork me on GitHub" src="forkme.png" style="position: absolute; top: 0; right: 0; border: 0;">
   </a>
 </body>
 </html>
