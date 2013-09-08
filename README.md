@@ -29,7 +29,7 @@ It's pretty simple to use, choose the number of column and give them the right c
 ```.col-1``` or ```.offset-1``` = one column <br />
 ```.last``` is the required class for the last column
 
-## It gives you a complete control over the grid with the LESS file !
+## It gives you a complete control over the grid with the LESS/SASS file !
 
 With ```@columnNumber``` you can choose how much columns your Grid had !<br />
 You can choose the max-width of your grid with ```@maxWidth```<br />
