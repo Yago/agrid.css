@@ -1,0 +1,113 @@
+/*
+ * AGRID.CSS - simple, light and fluid grid system
+ *
+ * Copyright (c) 2013 Yann Gouffon, Antistatique.net Sàrl
+ * Inspirate by 1140-Grid & Twitter Bootstrap
+ *
+ * Licensed under MIT license
+ *
+ */
+
+
+
+// CONTROL PANEL
+//================================================================================
+
+  // Define the number of columns
+  @columnNumber :          12;
+
+  // You want Gutter ? (yes=1/no=0)
+  @gutterExist :           1;
+
+  // Define the smallest .col
+  @startFrom :             1;
+
+  // Define the ratio between column and gutter
+  @columnRatio :            1.61803399;
+
+  // Define the max-width of your Grid
+  @maxWidth :               1140px;
+
+  // Define the Media Queries steps
+  @limit :                  767px;
+  @ieLimit :                950px;
+
+//================================================================================
+
+
+//--------------------------------------------------------------------------------
+// CALCULATOR  !! DON'T TOUCH !!
+//--------------------------------------------------------------------------------
+
+@columns :               (@columnNumber + 1);
+@gutterNumber :          (@columnNumber - 1) * @gutterExist;
+
+// ie optimisation (works perfeclty after 950px width)
+@ieCoef :                 .5;
+@ieOptimisation :         (@ieCoef/@maxWidth*100%);
+
+// Calculates widths
+@colWidth :              (100*@columnRatio)/((@columnNumber*@columnRatio)+@gutterNumber);
+@gutterWidth :            (@colWidth/@columnRatio) * @gutterExist;
+
+
+
+//--------------------------------------------------------------------------------
+// INIT
+//--------------------------------------------------------------------------------
+
+.container {max-width: @maxWidth; margin: 0 auto; padding: 0 10px;}
+.row {width: 100%;overflow: hidden; clear:both; margin: (@gutterWidth*1%) 0; position: relative;}
+[class*="col"] {margin:0;margin-right: @gutterWidth * 1%; *margin-right: (@gutterWidth * 1%)-@ieOptimisation;float: left;}
+[class*="col"] .row {margin:0;}
+.row .last {margin-right: 0;}
+[class*="col"] img {max-width: 100%; height: auto; width: auto; box-sizing: border-box; vertical-align: middle;}
+
+
+//--------------------------------------------------------------------------------
+// MIXINS
+//--------------------------------------------------------------------------------
+
+.colGenerator (@startFrom) when (@startFrom < @columns) {
+  (~".col@{startFrom}"){.colCalculator(@startFrom);}
+  .colGenerator(@startFrom + 1);
+}
+.colGenerator (@columns) {}
+
+.colCalculator(@startFrom) {
+  width: ((@colWidth * @startFrom) + (@gutterWidth * (@startFrom - 1))) * 1%;
+  *width: ((@colWidth * @startFrom) + (@gutterWidth * (@startFrom - 1))) * 1% - @ieOptimisation;
+}
+
+.colGenerator (@startFrom);
+
+
+.offsetGenerator (@startFrom) when (@startFrom < @columnNumber) {
+  (~".offset@{startFrom}"){.offsetCalculator(@startFrom);}
+  .offsetGenerator(@startFrom + 1);
+}
+.offsetGenerator (@columnNumber) {}
+
+.offsetCalculator(@offsetNumber) {
+  margin-left: ((@colWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1%; 
+  *margin-left: ((@colWidth * @offsetNumber) + (@gutterWidth * @offsetNumber)) * 1% - @ieOptimisation;
+}
+
+.offsetGenerator (@startFrom);
+
+
+//---------------------------------------------------------------------------------
+// MEDIA QUERIES
+//---------------------------------------------------------------------------------
+
+@media handheld, only screen and (max-width: @limit) {
+  .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
+  .row [class*="col"] {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
+  .row [class*="offset"] {margin-left: 0;}
+}
+
+@media screen and (max-width: @ieLimit) {
+  .lt-ie9 .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
+  .lt-ie9 .row [class*="col"] {width: auto; float: none; margin: (@gutterWidth*1%) 0;}
+  .lt-ie9 .row [class*="offset"] {margin-left: 0;}
+}
