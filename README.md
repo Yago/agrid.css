@@ -11,25 +11,25 @@ It's pretty simple to use, choose the number of column and give them the right c
 ```
 <div class="container">
     <div class="row">
-        <div class="span3"></div>
-        <div class="span3"></div>
-        <div class="span3"></div>
-        <div class="span3 last"></div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="col-3 last"></div>
     </div>
     <div class="row">
-        <div class="span3"></div>
-        <div class="span2 offset4"></div>
-        <div class="span3 last"></div>
+        <div class="col-3"></div>
+        <div class="col-2 offset-4"></div>
+        <div class="col-3 last"></div>
     </div>
 </div>
 ```
 
 ```.container``` is the block who content all your rows<br />
 ```.row``` is just like his name, he contains the column of your layout<br />
-```.span1``` or ```.offset1``` = one column <br />
+```.col-1``` or ```.offset-1``` = one column <br />
 ```.last``` is the required class for the last column
 
-## It gives you a complete control over the grid with the LESS file !
+## It gives you a complete control over the grid with the LESS/SASS file !
 
 With ```@columnNumber``` you can choose how much columns your Grid had !<br />
 You can choose the max-width of your grid with ```@maxWidth```<br />
