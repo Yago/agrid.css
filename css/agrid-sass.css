@@ -1,0 +1,164 @@
+/*
+ * AGRID.CSS - simple, light and fluid grid system
+ *
+ * Copyright (c) 2013 Yann Gouffon, Antistatique.net Sàrl
+ * Inspirate by 1140-Grid & Twitter Bootstrap
+ *
+ * Licensed under MIT license
+ *
+ */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 10px; }
+
+.row {
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+  margin: 3.2877% 0;
+  position: relative; }
+
+[class*="span"] {
+  margin: 0;
+  margin-right: 3.2877%;
+  *margin-right: 3.24384%;
+  float: left; }
+
+[class*="span"] .row {
+  margin: 0; }
+
+.row .last {
+  margin-right: 0; }
+
+[class*="span"] img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  vertical-align: middle; }
+
+.col1 {
+  width: 5.31961%;
+  *width: 5.27575%; }
+
+.col2 {
+  width: 13.92692%;
+  *width: 13.88306%; }
+
+.col3 {
+  width: 22.53423%;
+  *width: 22.49037%; }
+
+.col4 {
+  width: 31.14153%;
+  *width: 31.09767%; }
+
+.col5 {
+  width: 39.74884%;
+  *width: 39.70498%; }
+
+.col6 {
+  width: 48.35615%;
+  *width: 48.31229%; }
+
+.col7 {
+  width: 56.96346%;
+  *width: 56.9196%; }
+
+.col8 {
+  width: 65.57077%;
+  *width: 65.52691%; }
+
+.col9 {
+  width: 74.17808%;
+  *width: 74.13422%; }
+
+.col10 {
+  width: 82.78538%;
+  *width: 82.74152%; }
+
+.col11 {
+  width: 91.39269%;
+  *width: 91.34883%; }
+
+.col12 {
+  width: 100.0%;
+  *width: 99.95614%; }
+
+.offset1 {
+  margin-left: 8.60731%;
+  *margin-left: 8.56345%; }
+
+.offset2 {
+  margin-left: 17.21462%;
+  *margin-left: 17.17076%; }
+
+.offset3 {
+  margin-left: 25.82192%;
+  *margin-left: 25.77807%; }
+
+.offset4 {
+  margin-left: 34.42923%;
+  *margin-left: 34.38537%; }
+
+.offset5 {
+  margin-left: 43.03654%;
+  *margin-left: 42.99268%; }
+
+.offset6 {
+  margin-left: 51.64385%;
+  *margin-left: 51.59999%; }
+
+.offset7 {
+  margin-left: 60.25116%;
+  *margin-left: 60.2073%; }
+
+.offset8 {
+  margin-left: 68.85847%;
+  *margin-left: 68.81461%; }
+
+.offset9 {
+  margin-left: 77.46577%;
+  *margin-left: 77.42191%; }
+
+.offset10 {
+  margin-left: 86.07308%;
+  *margin-left: 86.02922%; }
+
+.offset11 {
+  margin-left: 94.68039%;
+  *margin-left: 94.63653%; }
+
+@media handheld, only screen and (max-width: 767px) {
+  .row {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .row [class*="span"] {
+    width: auto;
+    float: none;
+    margin: 3.2877% 0; }
+
+  .row [class*="offset"] {
+    margin-left: 0; } }
+@media screen and (max-width: 950px) {
+  .lt-ie9 .row {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .lt-ie9 .row [class*="span"] {
+    width: auto;
+    float: none;
+    margin: 3.2877% 0; }
+
+  .lt-ie9 .row [class*="offset"] {
+    margin-left: 0; } }
