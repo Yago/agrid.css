@@ -58,10 +58,10 @@ $gutterWidth :            ($colWidth/$columnRatio) * $gutterExist;
 
 .container {max-width: $maxWidth; margin: 0 auto; padding: 0 10px;}
 .row {width: 100%;overflow: hidden; clear:both; margin: ($gutterWidth*1%) 0; position: relative;}
-[class*="span"] {margin:0;margin-right: $gutterWidth*1%; *margin-right: ($gutterWidth*1%)-$ieOptimisation;float: left;}
-[class*="span"] .row {margin:0;}
+[class*="col"] {margin:0;margin-right: $gutterWidth*1%; *margin-right: ($gutterWidth*1%)-$ieOptimisation;float: left;}
+[class*="col"] .row {margin:0;}
 .row .last {margin-right: 0;}
-[class*="span"] img {max-width: 100%; height: auto; width: auto; box-sizing: border-box; vertical-align: middle;}
+[class*="col"] img {max-width: 100%; height: auto; width: auto; box-sizing: border-box; vertical-align: middle;}
 
 
 //--------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ $gutterWidth :            ($colWidth/$columnRatio) * $gutterExist;
 
 @mixin col-x($columnNumber, $colWidth, $gutterWidth) {
   @for $i from $startFrom through $columnNumber {
-    .col#{$i} {
+    .col-#{$i} {
       width: (($colWidth * $i) + ($gutterWidth * ($i - 1))) * 1%;
       *width: (($colWidth * $i) + ($gutterWidth * ($i - 1))) * 1% - $ieOptimisation;
     }

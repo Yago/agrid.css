@@ -69,7 +69,7 @@
 //--------------------------------------------------------------------------------
 
 .colGenerator (@startFrom) when (@startFrom < @columns) {
-  (~".col@{startFrom}"){.colCalculator(@startFrom);}
+  (~".col-@{startFrom}"){.colCalculator(@startFrom);}
   .colGenerator(@startFrom + 1);
 }
 .colGenerator (@columns) {}

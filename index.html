@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width">
 
   <!-- Install the awesome Agrid.css -->
-  <link rel="stylesheet" href="css/agrid.css">
+  <link rel="stylesheet" href="css/agrid-sass.css">
   <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
   <script src="http://use.edgefonts.net/bebas-neue.js"></script>
   <script src="http://use.edgefonts.net/lato.js"></script>
@@ -53,13 +53,13 @@
     .yago:hover {color: #4183C4;}
     .highlight {background-color: #2e2e2e; min-height: 10px;}
     .highlight h2 {position: relative; top: -35px;}
-    .highlight [class*="span"] {min-height: 10px; background-color: #ffc600; line-height: 40px; text-align: center;}
+    .highlight [class*="col"] {min-height: 10px; background-color: #ffc600; line-height: 40px; text-align: center;}
     pre {color: #000;}
     .dial {font-size: 30px; padding-top: 30px;text-align: center;}
     .download {display: block; min-height: 40px; line-height: 40px; color: #f0f0f0; background-color: #2e2e2e;}
     ul {padding: 0;}
     li {list-style-type: none; font-weight: 800;}
-    @media handheld, only screen and (max-width: 767px) {.hidden [class*="span"]{display: none;}}
+    @media handheld, only screen and (max-width: 767px) {.hidden [class*="col"]{display: none;}}
   </style>
     <script type="text/javascript">
   
@@ -82,18 +82,18 @@
   <div class="highlight hidden">
     <div class="container">
       <div class="row">
-        <div class="span2"></div>
-        <div class="span2"></div>
-        <div class="span2"></div>
-        <div class="span2"></div>
-        <div class="span2"></div>
-        <div class="span2 last"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2 last"></div>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div class="span6">
+      <div class="col-6">
         <h2>The grid you were always looking for&nbsp;!</h2>
         <p>
           Really easy to use, Agrid.css is a <strong>simple, light and fluid</strong> grid systeme. It use the same HTML class than Twitter Bootstrap, but without all the other stuff. So now, if you just want to use a grid, it seems to be the right choice.
@@ -104,31 +104,31 @@
         <pre><code>
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
-            &lt;div class="span4"&gt;&lt;/div&gt;
-            &lt;div class="span4"&gt;&lt;/div&gt;
-            &lt;div class="span4 last"&gt;&lt;/div&gt;
+            &lt;div class="col-4"&gt;&lt;/div&gt;
+            &lt;div class="col-4"&gt;&lt;/div&gt;
+            &lt;div class="col-4 last"&gt;&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
         </code></pre>
         <div class="row">
-          <div class="span6">
+          <div class="col-6">
             <strong>Download the 12 columns grid&nbsp;:</strong><br /><br />
             <a href="agrid-css.zip" class="download"><strong>agrid.css</strong></a>
           </div>
-          <div class="span6 last">
+          <div class="col-6 last">
             <strong>Or the LESS for more control&nbsp;:</strong><br /><br />
             <a href="agrid-less.zip" class="download"><strong>agrid.less</strong></a>
           </div>
         </div>
       </div>
-      <div class="span6 last">
+      <div class="col-6 last">
         <p class="dial">That's my daddy&nbsp;!<br /><span>▽</span></p>
         <img src="http://fc03.deviantart.net/fs70/i/2011/248/0/5/blue_baby_dragon_by_benu_h-d48xudy.png" alt="Ble Baby Dragon by benu-h/Deviantart" title="by benu-h on Deviantart" />
       </div>
     </div>
     <br />
     <div class="row">
-      <div class="span4">
+      <div class="col-4">
         <h2>Control the columns&nbsp;!</h2>
         <p>
           The less file gives you a complete control over the grid. You can <strong>choose how many columns you want</strong>. Just define :
@@ -137,7 +137,7 @@
           <li>@columnNumber</li>
         </ul>
       </div>
-      <div class="span4">
+      <div class="col-4">
         <h2>Control the gutter&nbsp;!</h2>
         <p>
           You can also <strong>choose the proportions between column and gutter</strong>. It make the perfect grid for your project. Define :
@@ -146,7 +146,7 @@
           <li>@columnRatio</li>
         </ul>
       </div>
-      <div class="span4 last">
+      <div class="col-4 last">
         <h2>Control the width&nbsp;!</h2>
         <p>
           You are not any more restrained by width choosing for you. You <strong>choose the width</strong>, the third important parameter :
@@ -162,82 +162,82 @@
     <div class="container">
       <h2>Just look how it's work</h2>
       <div class="row">
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1">.span1</p>
-      <p class="span1 last">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1">.span1</p>
+      <p class="col-1 last">.span1</p>
     </div>
     <div class="row">
-      <p class="span2">.span2</p>
-      <p class="span2">.span2</p>
-      <p class="span2">.span2</p>
-      <p class="span2">.span2</p>
-      <p class="span2">.span2</p>
-      <p class="span2 last">.span2</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2 last">.span2</p>
     </div>
     <div class="row">
-      <p class="span3">.span3</p>
-      <p class="span3">.span3</p>
-      <p class="span3">.span3</p>
-      <p class="span3 last">.span3</p>
+      <p class="col-3">.span3</p>
+      <p class="col-3">.span3</p>
+      <p class="col-3">.span3</p>
+      <p class="col-3 last">.span3</p>
     </div>
     <div class="row">
-      <p class="span4">.span4</p>
-      <p class="span4">.span4</p>
-      <p class="span4 last">.span4</p>
+      <p class="col-4">.span4</p>
+      <p class="col-4">.span4</p>
+      <p class="col-4 last">.span4</p>
     </div>
     <div class="row">
-      <p class="span5">.span5</p>
-      <p class="span5">.span5</p>
-      <p class="span2 last">.span2</p>
+      <p class="col-5">.span5</p>
+      <p class="col-5">.span5</p>
+      <p class="col-2 last">.span2</p>
     </div>
     <div class="row">
-      <p class="span6">.span6</p>
-      <p class="span6 last">.span6</p>
+      <p class="col-6">.span6</p>
+      <p class="col-6 last">.span6</p>
     </div>
     <div class="row">
-      <p class="span7">.span7</p>
-      <p class="span5 last">.span5</p>
+      <p class="col-7">.span7</p>
+      <p class="col-5 last">.span5</p>
     </div>
     <div class="row">
-      <p class="span8">.span8</p>
-      <p class="span4 last">.span4</p>
+      <p class="col-8">.span8</p>
+      <p class="col-4 last">.span4</p>
     </div>
     <div class="row">
-      <p class="span9">.span9</p>
-      <p class="span3 last">.span3</p>
+      <p class="col-9">.span9</p>
+      <p class="col-3 last">.span3</p>
     </div>
     <div class="row">
-      <p class="span10">.span10</p>
-      <p class="span2 last">.span2</p>
+      <p class="col-10">.span10</p>
+      <p class="col-2 last">.span2</p>
     </div>
     <div class="row">
-      <p class="span11">.span11</p>
-      <p class="span1 last">.span1</p>
+      <p class="col-11">.span11</p>
+      <p class="col-1 last">.span1</p>
     </div>
     <div class="row">
-      <p class="span2">.span2</p>
-      <p class="span2 offset3">.span2 .offset3</p>
-      <p class="span2 offset3 last">.span2 .offset3</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2 offset3">.span2 .offset3</p>
+      <p class="col-2 offset3 last">.span2 .offset3</p>
     </div>
     <div class="row">
-      <p class="span2">.span2</p>
-      <p class="span2 offset1">.span2 .offset1</p>
-      <p class="span2 offset5 last">.span2 .offset5</p>
+      <p class="col-2">.span2</p>
+      <p class="col-2 offset1">.span2 .offset1</p>
+      <p class="col-2 offset5 last">.span2 .offset5</p>
     </div>
     <div class="row">
-      <p class="span6 offset3 last">.span6 .offset3</p>
+      <p class="col-6 offset3 last">.span6 .offset3</p>
     </div>
     <div class="row">
-      <p class="span10 offset2 last">.span10 .offset2</p>
+      <p class="col-10 offset2 last">.span10 .offset2</p>
     </div>
     <br />
     </div>
