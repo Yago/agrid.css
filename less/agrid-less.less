@@ -83,7 +83,7 @@
 
 
 .offsetGenerator (@startFrom) when (@startFrom < @columnNumber) {
-  (~".offset@{startFrom}"){.offsetCalculator(@startFrom);}
+  (~".offset-@{startFrom}"){.offsetCalculator(@startFrom);}
   .offsetGenerator(@startFrom + 1);
 }
 .offsetGenerator (@columnNumber) {}

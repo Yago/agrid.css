@@ -79,7 +79,7 @@ $gutterWidth :            ($colWidth/$columnRatio) * $gutterExist;
 
 @mixin offset-x($columnNumber, $colWidth, $gutterWidth) {
   @for $i from $startFrom through $columnNumber - 1 {
-    .offset#{$i} {
+    .offset-#{$i} {
       margin-left: (($colWidth * $i) + ($gutterWidth * $i)) * 1%; 
       *margin-left: (($colWidth * $i) + ($gutterWidth * $i)) * 1% - $ieOptimisation;
     }
