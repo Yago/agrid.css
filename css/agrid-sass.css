@@ -139,7 +139,7 @@
     padding-left: 0px;
     padding-right: 0px; }
 
-  .row [class*="span"] {
+  .row [class*="col"] {
     width: auto;
     float: none;
     margin: 3.2877% 0; }
@@ -155,7 +155,7 @@
     padding-left: 0px;
     padding-right: 0px; }
 
-  .lt-ie9 .row [class*="span"] {
+  .lt-ie9 .row [class*="col"] {
     width: auto;
     float: none;
     margin: 3.2877% 0; }

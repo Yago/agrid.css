@@ -96,12 +96,12 @@ $gutterWidth :            ($colWidth/$columnRatio) * $gutterExist;
 
 @media handheld, only screen and (max-width: $limit) {
   .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .row [class*="span"] {width: auto; float: none; margin: ($gutterWidth*1%) 0;}
+  .row [class*="col"] {width: auto; float: none; margin: ($gutterWidth*1%) 0;}
   .row [class*="offset"] {margin-left: 0;}
 }
 
 @media screen and (max-width: $ieLimit) {
   .lt-ie9 .row {width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;}
-  .lt-ie9 .row [class*="span"] {width: auto; float: none; margin: ($gutterWidth*1%) 0;}
+  .lt-ie9 .row [class*="col"] {width: auto; float: none; margin: ($gutterWidth*1%) 0;}
   .lt-ie9 .row [class*="offset"] {margin-left: 0;}
 }
